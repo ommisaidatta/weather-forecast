@@ -17,7 +17,7 @@ themeswitch.addEventListener("change", () => {
   document.body.classList.toggle("dark-theme");
 });
 
-const apiKey = "bce7767275070594409a74db921c8e64";
+const apiKey = "Your_Api_Key";  // Replace with your Api key Here
 
 // 🌍 Get input and search button
 const searchInput = document.querySelector(".search-btn input");
@@ -176,7 +176,9 @@ function updateUI(currentData, forecastData) {
     weatherDate.textContent = getFormattedDate();
 
     
-  locationName.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${currentData.name}`;
+  // Normalize city name to remove diacritics
+  const normalizedCityName = currentData.name.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  locationName.innerHTML = `<i class="fas fa-map-marker-alt"></i> ${normalizedCityName}`;
   climate.textContent = currentData.weather[0].main;
   temp.textContent = `${Math.round(currentData.main.temp)}°C`;
   feelsLike.textContent = `Feels Like ${Math.round(currentData.main.feels_like)}°C`;
