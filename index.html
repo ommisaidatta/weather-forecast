@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Info</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+
+</head>
+<body>
+    <header>
+            <div class="container">
+                <div class="search-btn">
+                    <input type="text" placeholder="Search City....." >
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="current-btn">
+                    <i class='fas fa-map-marker-alt'></i>
+                    <button id="current-location-btn">Current Location</button>
+                </div>
+            </div>
+            <div class="theme-toggle">
+                <label class="theme-mode">
+                <input type="checkbox" id="theme-switch"/>
+                <div class="slider">
+                    <span class="icon sun">☀</span>
+                    <span class="icon moon">🌙</span>
+                </div>
+                </label>
+            </div>
+    </header>
+
+    <div class="dashboard-container">
+  <!-- Main Weather Card -->
+   <div class="left-side hidden">
+  <div class="main-weather card hidden">
+    <div class="weather-header hidden">
+      <span class="location"><i class="fas fa-map-marker-alt"></i> City Name</span>
+    </div>
+    <div class="weather-main hidden">
+      <div class="weather-info">
+        <div class="today-info">
+          <div class="climate">Weather Now</div>   
+          <p class="weather-date"></p>
+        </div>
+        <div class="temp">_ _°C </div>
+        <div class="feels-like">Feels Like _ _°C</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Five Days Forecast -->
+  <div class="forecast card hidden">
+    <div class="forecast-header">Five Days</div>
+    <div class="forecast-list">
+      <div class="forecast-item">
+        <div>Tue</div>
+        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Rain">
+        <div>_ _°C</div>
+      </div>
+      <div class="forecast-item">
+        <div>Wed</div>
+        <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="Clear">
+        <div>_ _°C</div>
+      </div>
+      <div class="forecast-item">
+        <div>Thu</div>
+        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Rain">
+        <div>_ _°C</div>
+      </div>
+      <div class="forecast-item">
+        <div>Fri</div>
+        <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="Clear">
+        <div>_ _°C</div>
+      </div>
+      <div class="forecast-item">
+        <div>Sat</div>
+        <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Rain">
+        <div>_ _°C</div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- Today's Highlights -->
+   <div class="right-side">
+  <div class="highlights card hidden">
+    <div class="highlights-header">Today's Highlight</div>
+    <div class="highlights-grid">
+       <div class="highlight-item">
+        <div class="highlight-title">Pressure</div>
+        <img src="assets/highlights/pressure.png" alt="Rain" class="highlight-icon">
+        <div>_ _°C</div>
+      </div>
+
+      <div class="highlight-item">
+        <div class="highlight-title">Chances of Rain</div>
+        <img src="assets/highlights/rain_chances.png" alt="Rain" class="highlight-icon">
+        <div>_ _%</div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-title">Wind Status</div>
+        <img src="assets/highlights/wind_speed.png" alt="Wind" class="highlight-icon">
+        <div>_ _ km/h</div>
+      </div>
+      <div class="highlight-item">
+        <div class="highlight-title">Humidity</div>
+        <img src="assets/highlights/humidity.png" alt="Humidity" class="highlight-icon">
+        <div>_ _%</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sun Rises/Set -->
+  <div class="sun-highlights card hidden">
+    <div class="sun-card">
+      <div>Sunrise</div>
+      <img src="https://cdn-icons-png.flaticon.com/128/7477/7477769.png" alt="sunrise" class="highlight-icon">
+      <div>00:00 Am</div>
+    </div>
+    <div class="sun-card">
+      <div>Sunset</div>
+      <img src="https://cdn-icons-png.flaticon.com/128/1975/1975486.png" alt="sunset" class="highlight-icon">
+      <div>00:00 Pm</div>
+    </div>
+  </div>
+  </div>
+  </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
