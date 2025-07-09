@@ -35,7 +35,7 @@ A simple weather app that shows real-time weather and 5-day forecast using OpenW
 
 ## 📁 Folder Structure
 
-weather forecast/
+````weather forecast/
 │
 ├── assets/
 │ ├── changingcondition/ # Backgrounds for current
@@ -48,4 +48,5 @@ condition
 ├── index.html # Main HTML file
 ├── style.css # Styling
 ├── script.js # JavaScript logic
-└── README.md # This file
+└── README.md # This file```
+````

@@ -268,7 +268,7 @@ input:checked + .slider::before {
   margin: 10px 0;
 }
 
-/* Other Cities */
+/* Sun Set/Rises */
 .sun-highlights {
   display: flex;
   gap: 10px;
