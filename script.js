@@ -17,7 +17,7 @@ themeswitch.addEventListener("change", () => {
   document.body.classList.toggle("dark-theme");
 });
 
-const apiKey = "Your_Api_Key";  // Replace with your Api key Here
+const apiKey = ""; 
 
 // 🌍 Get input and search button
 const searchInput = document.querySelector(".search-btn input");
@@ -77,7 +77,6 @@ window.addEventListener('DOMContentLoaded', () => {
 locationBtn.addEventListener("click", () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
-      // Set flag in localStorage to remember user preference
       localStorage.setItem('useCurrentLocation', 'true');
       successLocation(position);
     }, errorLocation);
@@ -93,7 +92,6 @@ function successLocation(position) {
 }
 
 function errorLocation() {
-  // If geolocation fails, remove the flag so it doesn't keep trying
   localStorage.removeItem('useCurrentLocation');
   alert("Unable to retrieve your location.");
 }
@@ -114,7 +112,7 @@ async function getWeatherData(city) {
     updateUI(currentData, forecastData);
 
   } catch (err) {
-    showWelcomeMessage("City not found or unable to fetch data.....");
+    alert("City not found or unable to fetch data.....");
     console.error(err);
   }
 }
@@ -135,7 +133,7 @@ async function getWeatherByCoords(lat, lon) {
     updateUI(currentData, forecastData);
 
   } catch (err) {
-    showWelcomeMessage("Unable to fetch weather for your location.....");
+    alert("Unable to fetch weather for your location.....");
     console.error(err);
   }
 }
