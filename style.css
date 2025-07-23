@@ -354,6 +354,7 @@ body.dark-theme .current-btn button {
 }
 body.dark-theme .weather-header {
   background-color: #2c3136;
+  color: #f1f1f1;
   box-shadow: 0 0 2px white inset;
 }
 
@@ -381,8 +382,11 @@ body.dark-theme .highlight-icon {
   filter: brightness(0.9) contrast(1.2);
 }
 
-body.dark-theme .weather-info {
-  color: #333;
+body.dark-theme .main-weather .weather-info {
+  color: black;
+}
+body.dark-theme .main-weather.default-view .weather-info {
+  color: white;
 }
 
 body.dark-theme .weather-clear {
@@ -396,6 +400,7 @@ body.dark-theme .weather-clouds {
 
 body.dark-theme .weather-rain {
   background: url("assets/changingcondition/rain.png") no-repeat center center/cover;
+
 }
 
 body.dark-theme .weather-thunderstorm {
@@ -415,9 +420,25 @@ body.dark-theme .weather-fog {
 /* ===================== RESPONSIVE DESIGN ===================== */
 
 @media (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+  }
+  .current-btn button {
+    padding: 12px;
+    width: 150px;
+  }
+  .current-btn i {
+    left: 10;
+    top: 30%;
+  }
   .dashboard-container {
     flex-direction: column;
     gap: 30px;
+  }
+    .search-btn input {
+    width: 50%;
   }
   .left-side, .right-side {
     max-width: 100%;
@@ -426,6 +447,10 @@ body.dark-theme .weather-fog {
   .main-weather {
     height: 28vh;
     min-height: 300px;
+  }
+  .weather-info {
+    margin-top: 50px;
+    gap: 20px;
   }
   .forecast-list {
     gap: 10px;

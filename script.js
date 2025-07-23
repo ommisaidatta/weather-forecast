@@ -17,15 +17,15 @@ themeswitch.addEventListener("change", () => {
   document.body.classList.toggle("dark-theme");
 });
 
-const apiKey = ""; 
+const apiKey = "bce7767275070594409a74db921c8e64"; 
 
-// 🌍 Get input and search button
+//  Get input and search button
 const searchInput = document.querySelector(".search-btn input");
 const searchIcon = document.querySelector(".search-btn i");
 const locationBtn = document.getElementById("current-location-btn");
 
 
-// 🌤 Main card elements
+//  Main card elements
 const mainWeatherCard = document.querySelector(".main-weather");
 const locationName = document.querySelector(".location");
 const weatherDate = document.querySelector('.weather-date');
@@ -33,18 +33,18 @@ const temp = document.querySelector(".temp");
 const climate = document.querySelector(".climate");
 const feelsLike = document.querySelector(".feels-like");
 
-// 🌡 Highlights
+//  Highlights
 const highlightItems = document.querySelectorAll(".highlight-item");
 const pressureEl = highlightItems[0].querySelector("div:last-child");
 const rainChanceEl = highlightItems[1].querySelector("div:last-child");
 const windEl = highlightItems[2].querySelector("div:last-child");
 const humidityEl = highlightItems[3].querySelector("div:last-child");
 
-// ☀ Sunrise / Sunset
+//  Sunrise / Sunset
 const sunriseEl = document.querySelector(".sun-card:nth-child(1) div:last-child");
 const sunsetEl = document.querySelector(".sun-card:nth-child(2) div:last-child");
 
-// 🗓 Forecast
+//  Forecast
 const forecastContainer = document.querySelector(".forecast-list");
 
 function getFormattedDate() {
@@ -54,7 +54,7 @@ function getFormattedDate() {
 }
 weatherDate.textContent = getFormattedDate();
 
-// 🔍 Search event
+//  Search event
 searchIcon.addEventListener("click", () => {
   const city = searchInput.value.trim();
   if (city) getWeatherData(city);
@@ -73,7 +73,7 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// 📍 Current Location Button
+//  Current Location Button
 locationBtn.addEventListener("click", () => {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -96,7 +96,7 @@ function errorLocation() {
   alert("Unable to retrieve your location.");
 }
 
-// 🌐 Fetch by city
+//  Fetch by city
 async function getWeatherData(city) {
   try {
     const currentRes = await fetch(
@@ -117,7 +117,7 @@ async function getWeatherData(city) {
   }
 }
 
-// 🌐 Fetch by coordinates
+//  Fetch by coordinates
 async function getWeatherByCoords(lat, lon) {
   try {
     const currentRes = await fetch(
@@ -138,12 +138,13 @@ async function getWeatherByCoords(lat, lon) {
   }
 }
 
-// 🖼️ Update UI with weather data
+//  Update UI with weather data
 function updateUI(currentData, forecastData) {
     const weatherMain = currentData.weather[0].main.toLowerCase();
 
+    mainWeatherCard.classList.remove("default-view");
 
-  // ✅ Reset classes and add weather background class
+  //  Reset classes and add weather background class
   mainWeatherCard.className = "main-weather card";
   switch (weatherMain) {
     case "clear":
@@ -192,7 +193,6 @@ function updateUI(currentData, forecastData) {
   const dailyForecast = forecastData.list.filter(item =>
     item.dt_txt.includes("12:00:00")
   );
-
   forecastContainer.innerHTML = "";
   dailyForecast.slice(0, 5).forEach(item => {
     const date = new Date(item.dt_txt);
@@ -210,7 +210,7 @@ function updateUI(currentData, forecastData) {
   });
 }
 
-// 🕐 Convert Unix Time to HH:MM AM/PM
+//  Convert Unix Time to HH:MM AM/PM
 function convertUnixToTime(unix) {
   const date = new Date(unix * 1000);
   let hours = date.getHours();

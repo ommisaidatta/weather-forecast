@@ -1,17 +1,17 @@
-# 🌦️ Weather Forecast App
+# Weather Forecast App
 
 A simple weather app that shows real-time weather and 5-day forecast using OpenWeatherMap API. Built with HTML, CSS, JavaScript and deployed via GitHub Pages.
 
-## 🔧 Features
+## Features
 
 - The **background image changes dynamically** based on the current weather condition (e.g., sunny, cloudy, rainy, foggy).
-- 🌍 Search weather by city name
-- 📍 Get weather using current location
-- 🌤 5-day forecast with custom icons
-- 🌓 Light / Dark theme toggle
-- 📱 Mobile responsive design
-- 📅 Shows today's date and weather highlights
-- 🔒 Stores location preference (with `localStorage`)
+- Search weather by city name
+- Get weather using current location
+- 5-day forecast with custom icons
+- Light / Dark theme toggle
+- Mobile responsive design
+- Shows today's date and weather highlights
+- Stores location preference (with `localStorage`)
 
 ## 📸 Preview
 
