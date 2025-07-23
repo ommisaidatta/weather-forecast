@@ -17,7 +17,7 @@ themeswitch.addEventListener("change", () => {
   document.body.classList.toggle("dark-theme");
 });
 
-const apiKey = "bce7767275070594409a74db921c8e64"; 
+const apiKey = "Your-Api-Key"; //Enter Your Api Key Here
 
 //  Get input and search button
 const searchInput = document.querySelector(".search-btn input");
